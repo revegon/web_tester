@@ -4,7 +4,6 @@ import {Text} from 'react-native-paper';
 import {InputBase} from './InputBase';
 import ModalDropdown from 'react-native-modal-dropdown';
 import PropTypes from 'prop-types';
-// import {ThemeContext} from '../Contexts/ThemeContext';
 
 const DropDownList = ({
     label,
@@ -17,7 +16,6 @@ const DropDownList = ({
     disabled,
 }) => {
     const initSelectIndex = value ? choiceList.findIndex(x => x === value) : -1;
-    // const {theme} = React.useContext(ThemeContext);
     return (
         <View style={[styles.container, containerStyle]}>
             <ModalDropdown
@@ -65,9 +63,6 @@ const styles = StyleSheet.create({
     inputContainer: {
         marginVertical: 0,
     },
-    // errorText: theme => ({
-    //     color: theme.colors.error,
-    // }),
     dropdown: optionCount => {
         let height = 45;
         const count = optionCount > 6 ? 6 : optionCount;
@@ -76,14 +71,9 @@ const styles = StyleSheet.create({
             height,
         };
     },
-    rowText: (
-        // theme,
-        isSelected,
-    ) => ({
+    rowText: isSelected => ({
         fontSize: 16,
         fontWeight: isSelected ? 'bold' : 'normal',
-        // backgroundColor: theme.colors.background,
-        // color: theme.colors.text,
         padding: 10,
     }),
 });

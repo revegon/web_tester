@@ -2,7 +2,6 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {TextInput, Text, IconButton} from 'react-native-paper';
 import PropTypes from 'prop-types';
-// import {ThemeContext} from '../Contexts/ThemeContext';
 
 class InputBase extends React.Component {
     constructor(props) {
@@ -46,14 +45,7 @@ class InputBase extends React.Component {
             error,
             editable,
         } = this.props;
-        // const {theme} = this.context;
-        const {useBottomStyle} = this.state;
         const hasError = error || errorMessage;
-        // const additionalStyle =
-        //     showRightIcon && (useBottomStyle || hasError)
-        //         ? styles.iconBottom(theme, hasError)
-        //         : null;
-        // styles.inputContainer(theme), additionalStyle
         return (
             <View style={[styles.container, containerStyle]} key={key}>
                 <View style={[styles.flexRow]}>
@@ -100,9 +92,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 15,
     },
-    // inputContainer: theme => ({
-    //     backgroundColor: theme.colors.primary,
-    // }),
     flexRow: {
         flexDirection: 'row',
     },
@@ -117,13 +106,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'flex-start',
     },
-    // errorText: theme => ({
-    //     color: theme.colors.error,
-    // }),
-    // iconBottom: (theme, hasError) => ({
-    //     borderBottomWidth: 3,
-    //     borderBottomColor: hasError ? theme.colors.error : theme.colors.primary,
-    // }),
 });
 
 InputBase.defaultProps = {
@@ -160,7 +142,5 @@ InputBase.propTypes = {
     error: PropTypes.bool,
     editable: PropTypes.bool,
 };
-
-// InputBase.contextType = ThemeContext;
 
 export {InputBase};
